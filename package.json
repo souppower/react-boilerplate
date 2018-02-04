@@ -1,8 +1,9 @@
 {
-  "name": "redux-study",
+  "name": "react-boilerplate",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "prebuild": "rm -rf ./dist",
     "build": "webpack",
     "clean": "rm -rf ./node_modules",
     "start": "webpack-dev-server --inline --progress",
