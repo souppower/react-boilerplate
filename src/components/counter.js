@@ -1,40 +1,22 @@
-// import { createStore } from "redux";
+import React from "react";
+import { connect } from "react-redux";
 
-const counter = (state = 0, action) => {
-  switch (action.type) {
-    case "INCREMENT":
-      return state + 1;
-    case "DECREMENT":
-      return state - 1;
-    default:
-      return state;
+import { countSelector } from "../selectors/count";
+
+class CounterComponent extends React.PureComponent {
+  render() {
+    return <div>{this.props.count}</div>;
   }
+}
+
+const mapStateToProps = state => {
+  return { count: countSelector(state) };
 };
 
-const createStore = reducer => {
-  let state;
-  let listners = [];
-
-  const getState = () => state;
-
-  const dispatch = action => {
-    state = reducer(state, action);
-    listners.forEach(listner => listner());
+const mapDispatchToProps = dispatch => {
+  return {
+    increment: () => dispatch({ type: "INCREMENT" })
   };
-
-  const subscribe = listner => {
-    listners.push(listner);
-    return () => {
-      listners = listners.filter(l => l !== listner);
-    };
-  };
-
-  return { getState, dispatch, subscribe };
 };
 
-const store = createStore(counter);
-console.log(store.getState());
-store.dispatch({ type: "INCREMENT" });
-console.log(store.getState());
-
-export default counter;
+export default connect(mapStateToProps, mapDispatchToProps)(CounterComponent);
