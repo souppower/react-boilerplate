@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import Root from "./components";
+import Root from './components'
 
-import "ress/ress.css";
+import 'ress/ress.css'
 
-const container = document.getElementById("app");
-ReactDOM.render(<Root />, container);
+const container = document.getElementById('app')
+ReactDOM.render(<Root />, container)

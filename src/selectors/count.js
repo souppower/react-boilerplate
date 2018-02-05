@@ -1,3 +1,3 @@
-import { createSelector } from "reselect";
+import { createSelector } from 'reselect'
 
-export const countSelector = state => state.count;
+export const countSelector = state => state.count
