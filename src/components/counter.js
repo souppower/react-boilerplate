@@ -2,9 +2,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { countSelector } from '../selectors/count'
+import { countSelector } from 'selectors/count'
 
-import { BlueButton, RedButton } from '../styles/button';
+import { BlueButton, RedButton } from 'styles/button'
 
 type Props = {
   count: number,
