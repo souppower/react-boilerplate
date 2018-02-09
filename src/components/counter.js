@@ -15,8 +15,8 @@ class CounterComponent extends React.PureComponent<Props> {
     return (
       <div>
         <h3>{this.props.count}</h3>
-        <BlueButton>increment</BlueButton>
-        <RedButton>decrement</RedButton>
+        <BlueButton onClick={this.props.increment}>increment</BlueButton>
+        <RedButton onClick={this.props.decrement}>decrement</RedButton>
       </div>
     )
   }
@@ -29,6 +29,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     increment: () => dispatch({ type: 'INCREMENT' }),
+    decrement: () => dispatch({ type: 'DECREMENT' }),
   }
 }
 
