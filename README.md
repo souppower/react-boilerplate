@@ -1,6 +1,7 @@
 # react-boilerplate
 
 ```
-$ docker build -t react-app
-$ docker run -p 3000:3000 react-app
+# if you don't have docker-compose yet
+$ brew install docker-compose
+$ docker-compose up
 ```
